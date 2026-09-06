@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>信念遊戲</title>
+  <meta name="description" content="信念遊戲 — 用實體卡片，練習睇清楚自己嘅信念。實體信念卡／教學工具。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-melt" aria-hidden="true">
+    <div class="melt-layer melt-a"></div>
+    <div class="melt-layer melt-b"></div>
+    <div class="melt-layer melt-c"></div>
+    <div class="melt-layer melt-d"></div>
+    <div class="melt-veil"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#top" data-i18n="brand">信念遊戲</a>
+      <nav class="lang-switch" aria-label="Language">
+        <button type="button" class="lang-btn is-active" data-lang="zh-Hant" aria-pressed="true">繁</button>
+        <span class="lang-sep" aria-hidden="true">｜</span>
+        <button type="button" class="lang-btn" data-lang="zh-Hans" aria-pressed="false">簡</button>
+        <span class="lang-sep" aria-hidden="true">｜</span>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 1. Hero: photo-first + locked copy -->
+    <section class="hero">
+      <div class="hero-art">
+        <img
+          src="assets/card-sample.jpg"
+          alt="信念遊戲卡片示意"
+          width="240"
+          height="360"
+          class="card-sample"
+        />
+      </div>
+      <div class="hero-copy">
+        <h1 data-i18n="heroTitle">信念遊戲</h1>
+        <p class="hero-line" data-i18n="heroLine">用實體卡片，練習睇清楚自己嘅信念。</p>
+        <p class="hero-sub" data-i18n="heroSub">一套可以摸、可以傾、可以用喺課堂同自我練習嘅信念工具。</p>
+        <a class="btn btn-wa" href="https://wa.me/85261841718" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="ctaPrimary">WhatsApp 查詢／報名</span>
+          <span class="btn-sub">61841718</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 2. 這是什麼 -->
+    <section class="block" id="what" aria-labelledby="what-heading">
+      <h2 id="what-heading" data-i18n="whatTitle">這是什麼</h2>
+      <div class="glass">
+        <p data-i18n="whatP1">信念遊戲係實體信念卡／教學工具，唔係課程證書、唔係占卜、亦唔係保證人生結果嘅產品。</p>
+        <p data-i18n="whatP2"><strong>用途：</strong>幫人把「我以為係真」嘅句子拎出嚟睇、對照、討論。</p>
+        <p data-i18n="whatP3"><strong>來源：</strong>內容由 Andy 整理同授課；營運同產品落地由 Vanessa 負責。</p>
+      </div>
+    </section>
+
+    <!-- 3. 適合誰 -->
+    <section class="block" id="who" aria-labelledby="who-heading">
+      <h2 id="who-heading" data-i18n="whoTitle">適合誰</h2>
+      <ul class="fact-list">
+        <li data-i18n="who1">想練習自我覺察、同信念對話嘅人</li>
+        <li data-i18n="who2">導師、輔導、身心靈／工作坊想用實體教具嘅人</li>
+        <li data-i18n="who3">想同朋友或小組一齊玩、一齊傾嘅人</li>
+      </ul>
+      <p class="note" data-i18n="whoNot">唔適合：期望「抽一張就改變命運」或當醫療／投資建議嘅人。</p>
+    </section>
+
+    <!-- 4. 裡面有什麼 / how it works -->
+    <section class="block" id="inside" aria-labelledby="inside-heading">
+      <h2 id="inside-heading" data-i18n="insideTitle">裡面有什麼</h2>
+      <ul class="fact-list">
+        <li data-i18n="inside1">信念套：第一套約 50 張已完成（實體卡＋可用喺教學／練習）</li>
+        <li data-i18n="inside2">金錢信念套：製作中，陸續推出</li>
+      </ul>
+      <p class="how" data-i18n="howUse"><strong>用法：</strong>拎出信念句子 → 睇／對照／討論。</p>
+    </section>
+
+    <!-- Three offer paths (locked structure) -->
+    <section class="block offers" id="offers" aria-labelledby="offers-heading">
+      <h2 id="offers-heading" data-i18n="offersTitle">三條路徑</h2>
+      <p class="section-lead" data-i18n="offersLead">暫時只接受直接聯絡；付款同物流 ready 先加購買掣。</p>
+      <div class="offer-grid">
+        <article class="offer-card">
+          <span class="offer-num">01</span>
+          <h3 data-i18n="offer1Title">買卡</h3>
+          <p data-i18n="offer1Body">信念套約 50 張。實體卡，可用喺教學／自我練習。</p>
+          <a class="btn btn-wa btn-sm" href="https://wa.me/85261841718" target="_blank" rel="noopener noreferrer" data-i18n="ctaCards">WhatsApp 查詢購卡</a>
+        </article>
+        <article class="offer-card offer-card--accent">
+          <span class="offer-num">02</span>
+          <h3 data-i18n="offer2Title">認證班</h3>
+          <p data-i18n="offer2Body">詳情請 WhatsApp 查詢／報名。</p>
+          <a class="btn btn-wa btn-sm" href="https://wa.me/85261841718" target="_blank" rel="noopener noreferrer" data-i18n="ctaCert">WhatsApp 查詢認證班</a>
+        </article>
+        <article class="offer-card">
+          <span class="offer-num">03</span>
+          <h3 data-i18n="offer3Title">進階班</h3>
+          <p data-i18n="offer3Body">詳情請 WhatsApp 查詢／報名。</p>
+          <a class="btn btn-wa btn-sm" href="https://wa.me/85261841718" target="_blank" rel="noopener noreferrer" data-i18n="ctaAdv">WhatsApp 查詢進階班</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. CTA strip -->
+    <section class="cta-strip" id="contact" aria-labelledby="cta-heading">
+      <h2 id="cta-heading" data-i18n="ctaTitle">有興趣或想了解工作坊／訂購</h2>
+      <p data-i18n="ctaNote">暫時只接受直接聯絡；付款同物流 ready 先加購買掣。</p>
+      <a class="btn btn-wa" href="https://wa.me/85261841718" target="_blank" rel="noopener noreferrer">
+        <span data-i18n="ctaPrimary2">WhatsApp 61841718</span>
+      </a>
+    </section>
+
+    <!-- 6. About -->
+    <section class="block" id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading" data-i18n="aboutTitle">關於</h2>
+      <div class="about-grid">
+        <div class="glass">
+          <h3 data-i18n="andyTitle">Andy</h3>
+          <p data-i18n="andyBody">信念遊戲內容同教學來源；負責卡面信念內容同教法。</p>
+        </div>
+        <div class="glass">
+          <h3 data-i18n="vanessaTitle">Vanessa</h3>
+          <p data-i18n="vanessaBody">CEO／營運；負責產品落地、網站、圖像同日常營運。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footerCopy">© 信念遊戲</p>
+    <p>
+      <span data-i18n="footerContact">聯絡：</span>
+      <a href="https://wa.me/85261841718" target="_blank" rel="noopener noreferrer">WhatsApp 61841718</a>
+    </p>
+    <p class="disclaimer" data-i18n="disclaimer">本產品為覺察與教學工具，不構成醫療、心理治療或財務投資建議。</p>
+  </footer>
+
+  <a class="sticky-wa" href="https://wa.me/85261841718" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp 61841718">
+    <span data-i18n="stickyWa">WhatsApp</span>
+    <span class="sticky-num">61841718</span>
+  </a>
+
+  <script>
+    const i18n = {
+      "zh-Hant": {
+        brand: "信念遊戲",
+        heroTitle: "信念遊戲",
+        heroLine: "用實體卡片，練習睇清楚自己嘅信念。",
+        heroSub: "一套可以摸、可以傾、可以用喺課堂同自我練習嘅信念工具。",
+        ctaPrimary: "WhatsApp 查詢／報名",
+        whatTitle: "這是什麼",
+        whatP1: "信念遊戲係實體信念卡／教學工具，唔係課程證書、唔係占卜、亦唔係保證人生結果嘅產品。",
+        whatP2: "用途：幫人把「我以為係真」嘅句子拎出嚟睇、對照、討論。",
+        whatP3: "來源：內容由 Andy 整理同授課；營運同產品落地由 Vanessa 負責。",
+        whoTitle: "適合誰",
+        who1: "想練習自我覺察、同信念對話嘅人",
+        who2: "導師、輔導、身心靈／工作坊想用實體教具嘅人",
+        who3: "想同朋友或小組一齊玩、一齊傾嘅人",
+        whoNot: "唔適合：期望「抽一張就改變命運」或當醫療／投資建議嘅人。",
+        insideTitle: "裡面有什麼",
+        inside1: "信念套：第一套約 50 張已完成（實體卡＋可用喺教學／練習）",
+        inside2: "金錢信念套：製作中，陸續推出",
+        howUse: "用法：拎出信念句子 → 睇／對照／討論。",
+        offersTitle: "三條路徑",
+        offersLead: "暫時只接受直接聯絡；付款同物流 ready 先加購買掣。",
+        offer1Title: "買卡",
+        offer1Body: "信念套約 50 張。實體卡，可用喺教學／自我練習。",
+        ctaCards: "WhatsApp 查詢購卡",
+        offer2Title: "認證班",
+        offer2Body: "詳情請 WhatsApp 查詢／報名。",
+        ctaCert: "WhatsApp 查詢認證班",
+        offer3Title: "進階班",
+        offer3Body: "詳情請 WhatsApp 查詢／報名。",
+        ctaAdv: "WhatsApp 查詢進階班",
+        ctaTitle: "有興趣或想了解工作坊／訂購",
+        ctaNote: "暫時只接受直接聯絡；付款同物流 ready 先加購買掣。",
+        ctaPrimary2: "WhatsApp 61841718",
+        aboutTitle: "關於",
+        andyTitle: "Andy",
+        andyBody: "信念遊戲內容同教學來源；負責卡面信念內容同教法。",
+        vanessaTitle: "Vanessa",
+        vanessaBody: "CEO／營運；負責產品落地、網站、圖像同日常營運。",
+        footerCopy: "© 信念遊戲",
+        footerContact: "聯絡：",
+        disclaimer: "本產品為覺察與教學工具，不構成醫療、心理治療或財務投資建議。",
+        stickyWa: "WhatsApp"
+      },
+      "zh-Hans": {
+        brand: "信念游戏",
+        heroTitle: "信念游戏",
+        heroLine: "即将推出",
+        heroSub: "简体内容筹备中。请切换至「繁」查看完整介绍。",
+        ctaPrimary: "WhatsApp 查询／报名",
+        whatTitle: "即将推出",
+        whatP1: "即将推出",
+        whatP2: "即将推出",
+        whatP3: "即将推出",
+        whoTitle: "即将推出",
+        who1: "即将推出",
+        who2: "即将推出",
+        who3: "即将推出",
+        whoNot: "即将推出",
+        insideTitle: "即将推出",
+        inside1: "即将推出",
+        inside2: "即将推出",
+        howUse: "即将推出",
+        offersTitle: "三条路径",
+        offersLead: "即将推出 — 暂无标价，WhatsApp 查询。",
+        offer1Title: "买卡",
+        offer1Body: "即将推出",
+        ctaCards: "WhatsApp 查询购卡",
+        offer2Title: "认证班",
+        offer2Body: "即将推出",
+        ctaCert: "WhatsApp 查询认证班",
+        offer3Title: "进阶班",
+        offer3Body: "即将推出",
+        ctaAdv: "WhatsApp 查询进阶班",
+        ctaTitle: "有兴趣请 WhatsApp",
+        ctaNote: "即将推出",
+        ctaPrimary2: "WhatsApp 61841718",
+        aboutTitle: "关于",
+        andyTitle: "Andy",
+        andyBody: "即将推出",
+        vanessaTitle: "Vanessa",
+        vanessaBody: "即将推出",
+        footerCopy: "© 信念游戏",
+        footerContact: "联络：",
+        disclaimer: "本产品为觉察与教学工具，不构成医疗、心理治疗或财务投资建议。",
+        stickyWa: "WhatsApp"
+      },
+      en: {
+        brand: "Belief Game",
+        heroTitle: "Belief Game",
+        heroLine: "Coming soon",
+        heroSub: "English copy in progress. Switch to 繁 for the full page.",
+        ctaPrimary: "WhatsApp enquire / enrol",
+        whatTitle: "Coming soon",
+        whatP1: "Coming soon",
+        whatP2: "Coming soon",
+        whatP3: "Coming soon",
+        whoTitle: "Coming soon",
+        who1: "Coming soon",
+        who2: "Coming soon",
+        who3: "Coming soon",
+        whoNot: "Coming soon",
+        insideTitle: "Coming soon",
+        inside1: "Coming soon",
+        inside2: "Coming soon",
+        howUse: "Coming soon",
+        offersTitle: "Three paths",
+        offersLead: "Coming soon — no prices listed; enquire via WhatsApp.",
+        offer1Title: "Buy cards",
+        offer1Body: "Coming soon",
+        ctaCards: "WhatsApp — cards",
+        offer2Title: "Certified class",
+        offer2Body: "Coming soon",
+        ctaCert: "WhatsApp — certified class",
+        offer3Title: "Advanced class",
+        offer3Body: "Coming soon",
+        ctaAdv: "WhatsApp — advanced class",
+        ctaTitle: "Interested? WhatsApp us",
+        ctaNote: "Coming soon",
+        ctaPrimary2: "WhatsApp 61841718",
+        aboutTitle: "About",
+        andyTitle: "Andy",
+        andyBody: "Coming soon",
+        vanessaTitle: "Vanessa",
+        vanessaBody: "Coming soon",
+        footerCopy: "© Belief Game",
+        footerContact: "Contact: ",
+        disclaimer: "Awareness and teaching tool only. Not medical, psychotherapy, or financial advice.",
+        stickyWa: "WhatsApp"
+      }
+    };
+
+    function applyLang(lang) {
+      const dict = i18n[lang] || i18n["zh-Hant"];
+      document.documentElement.lang = lang === "en" ? "en" : lang;
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key] != null) el.textContent = dict[key];
+      });
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        const active = btn.getAttribute("data-lang") === lang;
+        btn.classList.toggle("is-active", active);
+        btn.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+    }
+
+    document.querySelectorAll(".lang-btn").forEach((btn) => {
+      btn.addEventListener("click", () => applyLang(btn.getAttribute("data-lang")));
+    });
+
+    applyLang("zh-Hant");
+  </script>
+</body>
+</html>
