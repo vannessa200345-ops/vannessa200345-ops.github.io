@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>男朋友申請表 — 2026</title>
+<style>
+  :root {
+    --pink: #e85a7a;
+    --pink-soft: #fff0f4;
+    --pink-mid: #f7b6c4;
+    --ink: #2a1f24;
+    --muted: #6b5560;
+    --line: #f0d6de;
+    --ok: #2d8a5e;
+    --reject: #c0392b;
+    --warn: #b8860b;
+    --card: #ffffff;
+    --bg: #faf5f7;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "PingFang HK", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei",
+      "Hiragino Sans CNS", system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 16px;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1.25rem 1rem 3rem;
+  }
+  header.app-header {
+    background: linear-gradient(145deg, #fff 0%, var(--pink-soft) 100%);
+    border: 1.5px solid var(--line);
+    border-radius: 18px;
+    padding: 1.5rem 1.25rem 1.25rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 28px rgba(232, 90, 122, 0.08);
+  }
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+  .badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: var(--pink);
+    color: #fff;
+  }
+  .badge.alt { background: #5c3d4a; }
+  h1 {
+    margin: 0 0 0.35rem;
+    font-size: 1.65rem;
+    letter-spacing: 0.04em;
+    color: var(--pink);
+  }
+  .subtitle {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+  .subtitle li { margin: 0.15rem 0; list-style: none; }
+  .subtitle ul { margin: 0.5rem 0 0; padding: 0; }
+  .intro {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    background: #2a1f24;
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(250, 245, 247, 0.92);
+    backdrop-filter: blur(8px);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid transparent;
+  }
+  button.action {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    background: var(--pink);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(232, 90, 122, 0.25);
+  }
+  button.action.secondary {
+    background: #fff;
+    color: var(--pink);
+    border: 1.5px solid var(--pink-mid);
+    box-shadow: none;
+  }
+  button.action:active { transform: scale(0.98); }
+  #copy-toast {
+    display: none;
+    font-size: 0.85rem;
+    color: var(--ok);
+    font-weight: 600;
+    align-self: center;
+  }
+  section.card {
+    background: var(--card);
+    border: 1.5px solid var(--line);
+    border-radius: 16px;
+    padding: 1.15rem 1.1rem 1.25rem;
+    margin-bottom: 0.9rem;
+  }
+  section.card h2 {
+    margin: 0 0 0.85rem;
+    font-size: 1.1rem;
+    color: var(--pink);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    border-bottom: 1.5px dashed var(--line);
+    padding-bottom: 0.55rem;
+  }
+  section.card h2 .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.55rem;
+    height: 1.55rem;
+    border-radius: 50%;
+    background: var(--pink-soft);
+    color: var(--pink);
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .hint {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: -0.4rem 0 0.75rem;
+  }
+  .field {
+    margin-bottom: 0.85rem;
+  }
+  .field:last-child { margin-bottom: 0; }
+  label.lbl {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  .sublbl {
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="tel"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    font: inherit;
+    font-size: 0.95rem;
+    padding: 0.6rem 0.75rem;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--ink);
+    transition: border-color 0.15s;
+  }
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px rgba(232, 90, 122, 0.15);
+  }
+  textarea { min-height: 88px; resize: vertical; }
+  .row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  @media (max-width: 520px) {
+    .row-2 { grid-template-columns: 1fr; }
+  }
+  .checks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .checks label, .inline-checks label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    font-size: 0.92rem;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  .checks input, .inline-checks input {
+    margin-top: 0.2rem;
+    accent-color: var(--pink);
+    flex-shrink: 0;
+  }
+  .inline-checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1rem;
+  }
+  .rating-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .rating-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.45rem 0.55rem;
+    background: var(--pink-soft);
+    border-radius: 10px;
+  }
+  .rating-row span { font-size: 0.88rem; }
+  .rating-row input[type="number"] {
+    width: 4.2rem;
+    text-align: center;
+    padding: 0.4rem;
+  }
+  /* HR-only block */
+  .hr-block {
+    background: #f4f4f5;
+    border: 2px dashed #bbb;
+    border-radius: 16px;
+    padding: 1.15rem 1.1rem;
+    margin-bottom: 0.9rem;
+    position: relative;
+    opacity: 0.95;
+  }
+  .hr-block h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+    color: #555;
+  }
+  .hr-stamp {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .hr-block .status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem;
+  }
+  @media (max-width: 520px) {
+    .hr-block .status-grid { grid-template-columns: 1fr; }
+  }
+  .status-chip {
+    padding: 0.55rem 0.7rem;
+    border-radius: 10px;
+    border: 1.5px solid #ccc;
+    background: #eee;
+    color: #666;
+    font-size: 0.88rem;
+    font-weight: 600;
+    pointer-events: none;
+    user-select: none;
+  }
+  .status-chip.approve { border-color: #8fd4ad; background: #e8f8ef; color: var(--ok); }
+  .status-chip.interview { border-color: #c9b8f0; background: #f3eefc; color: #6b4fa0; }
+  .status-chip.review { border-color: #e6d08a; background: #fdf6e3; color: var(--warn); }
+  .status-chip.reject { border-color: #e8a0a0; background: #fceaea; color: var(--reject); }
+  .status-chip.instant { border-color: #e07070; background: #fde8e8; color: #a01818; }
+  .notice {
+    background: #fff8e8;
+    border: 1.5px solid #f0d090;
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    margin-bottom: 0.9rem;
+    font-size: 0.9rem;
+  }
+  .notice h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    color: #8a6a10;
+  }
+  .notice ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+  .probation {
+    background: linear-gradient(135deg, #fff0f4, #ffe8f0);
+    border: 1.5px solid var(--pink-mid);
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    margin-bottom: 0.9rem;
+    font-size: 0.9rem;
+  }
+  .probation h2 {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+    color: var(--pink);
+  }
+  .final-notice {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--reject);
+    padding: 0.85rem;
+    border: 2px solid var(--reject);
+    border-radius: 12px;
+    margin: 1rem 0;
+    background: #fff5f5;
+  }
+  footer.sig {
+    background: var(--card);
+    border: 1.5px solid var(--line);
+    border-radius: 16px;
+    padding: 1.15rem 1.1rem;
+  }
+  footer.sig h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.05rem;
+    color: var(--pink);
+  }
+  .footer-note {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.78rem;
+    color: #aaa;
+  }
+
+  @media print {
+    body { background: #fff; font-size: 12pt; }
+    .toolbar, #copy-toast, .no-print { display: none !important; }
+    .wrap { max-width: none; padding: 0; }
+    section.card, .hr-block, .notice, .probation, footer.sig, header.app-header {
+      box-shadow: none;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    input, textarea, select {
+      border: 1px solid #999 !important;
+      box-shadow: none !important;
+    }
+    .intro { background: #222 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="app-header">
+  <div class="badge-row">
+    <span class="badge">2026 招聘季</span>
+    <span class="badge alt">限額：1 個正選</span>
+  </div>
+  <h1>男朋友申請表 — 2026</h1>
+  <div class="subtitle">
+    <ul>
+      <li>職位：我男朋友</li>
+      <li>部門：我嘅心同快樂</li>
+      <li>合約：長期，可無限續約</li>
+      <li>報名費：$0（但浪費我時間即刻淘汰）</li>
+    </ul>
+  </div>
+  <div class="intro">認真填。呃我即刻 REJECT。</div>
+</header>
+
+<div class="toolbar no-print">
+  <button type="submit" form="bf-form" class="action" id="btn-submit">提交申請表（電郵畀收表人）</button>
+  <button type="button" class="action secondary" id="btn-copy">複製全部答案</button>
+  <button type="button" class="action secondary" id="btn-print">列印／存 PDF</button>
+  <span id="copy-toast">已複製 ✦</span>
+  <span id="submit-toast" style="display:none;margin-left:8px;color:#0a7;">提交中…</span>
+</div>
+
+<form id="bf-form" autocomplete="on" action="https://formsubmit.co/vannessa200345@yahoo.com.hk" method="POST">
+  <input type="hidden" name="_subject" value="男朋友申請表 2026 — 新申請" />
+  <input type="hidden" name="_template" value="table" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_next" value="https://vannessa200345-ops.github.io/questionnaire/?submitted=1" />
+  <input type="hidden" name="full_answers" id="full_answers" value="" />
+
+  <!-- 1. 個人資料 -->
+  <section class="card" id="sec-personal">
+    <h2><span class="num">1</span> 個人資料</h2>
+    <div class="row-2">
+      <div class="field">
+        <label class="lbl" for="name">全名</label>
+        <input type="text" id="name" name="name" placeholder="身份證／平時點叫你都得" />
+      </div>
+      <div class="field">
+        <label class="lbl" for="nickname">暱稱／我想點叫你</label>
+        <input type="text" id="nickname" name="nickname" />
+      </div>
+    </div>
+    <div class="row-2">
+      <div class="field">
+        <label class="lbl" for="age">年齡</label>
+        <input type="number" id="age" name="age" min="18" max="99" />
+      </div>
+      <div class="field">
+        <label class="lbl" for="birthday">生日</label>
+        <input type="date" id="birthday" name="birthday" />
+      </div>
+    </div>
+    <div class="row-2">
+      <div class="field">
+        <label class="lbl" for="height">身高</label>
+        <input type="text" id="height" name="height" placeholder="例如 178cm" />
+      </div>
+      <div class="field">
+        <label class="lbl" for="location">現居地</label>
+        <input type="text" id="location" name="location" placeholder="例如 香港／九龍／新界邊區" />
+      </div>
+    </div>
+    <div class="row-2">
+      <div class="field">
+        <label class="lbl" for="job">職業／學業</label>
+        <input type="text" id="job" name="job" />
+      </div>
+      <div class="field">
+        <label class="lbl" for="contact">聯絡方式 <span class="sublbl">（WhatsApp／IG）</span></label>
+        <input type="text" id="contact" name="contact" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="lbl">目前感情狀況</label>
+      <div class="inline-checks">
+        <label><input type="radio" name="status" value="單身" /> 單身</label>
+        <label><input type="radio" name="status" value="剛分手" /> 剛分手</label>
+        <label><input type="radio" name="status" value="有曖昧" /> 有曖昧</label>
+        <label><input type="radio" name="status" value="複雜" /> 複雜（請解釋）</label>
+      </div>
+    </div>
+    <div class="field">
+      <label class="lbl" for="status_note">如選「複雜」，請解釋</label>
+      <textarea id="status_note" name="status_note" placeholder="講清楚，唔好曖昧……等等，呢度可以曖昧。"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="three_words">用三個詞形容自己</label>
+      <input type="text" id="three_words" name="three_words" placeholder="例如：可靠、搞笑、會煮嘢" />
+    </div>
+  </section>
+
+  <!-- 2. 感情史 -->
+  <section class="card" id="sec-history">
+    <h2><span class="num">2</span> 感情史</h2>
+    <p class="hint">誠實就好。隱瞞＝紅旗。</p>
+    <div class="field">
+      <label class="lbl" for="ex_count">前任數量（大約）</label>
+      <input type="number" id="ex_count" name="ex_count" min="0" max="99" />
+    </div>
+    <div class="field">
+      <label class="lbl" for="longest">最長一段感情維持幾耐？</label>
+      <input type="text" id="longest" name="longest" placeholder="例如 2 年 3 個月" />
+    </div>
+    <div class="field">
+      <label class="lbl" for="why_ended">上一段點解完？你學到咩？</label>
+      <textarea id="why_ended" name="why_ended"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="still_talk">你仲同前任聯絡嗎？點解？</label>
+      <textarea id="still_talk" name="still_talk"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="how_treat_ex">你點對待前任（分手前同分手後）？</label>
+      <textarea id="how_treat_ex" name="how_treat_ex" placeholder="呢題好緊要——你點對佢，大概就係你點對我。"></textarea>
+    </div>
+  </section>
+
+  <!-- 3. 情緒智商 -->
+  <section class="card" id="sec-eq">
+    <h2><span class="num">3</span> 情緒智商</h2>
+    <div class="field">
+      <label class="lbl" for="conflict">嘈交／意見唔同時，你通常點處理？</label>
+      <textarea id="conflict" name="conflict" placeholder="冷戰？即刻傾？需要冷靜時間？寫清楚。"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="stress">壓力大嘅時候你會變成點？</label>
+      <textarea id="stress" name="stress"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="apology">你識唔識講對唔住？上次真心道歉係為咩？</label>
+      <textarea id="apology" name="apology"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="comfort">伴侶情緒低落時，你會點做？</label>
+      <textarea id="comfort" name="comfort"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl">你願意唔願意一齊睇心理／關係相關內容？</label>
+      <div class="inline-checks">
+        <label><input type="radio" name="therapy_ok" value="願意" /> 願意</label>
+        <label><input type="radio" name="therapy_ok" value="可以商量" /> 可以商量</label>
+        <label><input type="radio" name="therapy_ok" value="唔想" /> 唔想</label>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 溝通 -->
+  <section class="card" id="sec-comms">
+    <h2><span class="num">4</span> 溝通</h2>
+    <div class="field">
+      <label class="lbl">你偏好嘅聯絡方式</label>
+      <div class="inline-checks">
+        <label><input type="checkbox" name="pref_wa" value="WhatsApp" /> WhatsApp</label>
+        <label><input type="checkbox" name="pref_call" value="電話" /> 電話</label>
+        <label><input type="checkbox" name="pref_vc" value="視訊" /> 視訊</label>
+        <label><input type="checkbox" name="pref_irl" value="見面" /> 見面傾</label>
+      </div>
+    </div>
+    <div class="field">
+      <label class="lbl" for="reply_speed">平時回覆訊息大概幾耐？</label>
+      <select id="reply_speed" name="reply_speed">
+        <option value="">— 請選擇 —</option>
+        <option>即刻（忙都回一句）</option>
+        <option>幾分鐘內</option>
+        <option>一小時內</option>
+        <option>幾小時（忙）</option>
+        <option>睇心情（⚠️ 有風險）</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="lbl" for="ghost">你有冇「人間蒸發」嘅習慣？點解會？</label>
+      <textarea id="ghost" name="ghost"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="hard_talk">困難話題（錢、未來、界線）你敢唔敢傾？</label>
+      <textarea id="hard_talk" name="hard_talk"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="love_lang_give">你表達愛嘅方式 <span class="sublbl">（給予）</span></label>
+      <input type="text" id="love_lang_give" name="love_lang_give" placeholder="例如：行動、說話、陪伴、禮物、身體接觸" />
+    </div>
+    <div class="field">
+      <label class="lbl" for="love_lang_need">你最需要接收嘅愛嘅方式</label>
+      <input type="text" id="love_lang_need" name="love_lang_need" />
+    </div>
+  </section>
+
+  <!-- 5. 紅旗自查 -->
+  <section class="card" id="sec-redflags">
+    <h2><span class="num">5</span> 紅旗自查</h2>
+    <p class="hint">有就剔。誠實剔＝加分；呃＝即刻拒絕—紅旗。</p>
+    <div class="checks">
+      <label><input type="checkbox" name="rf_lie" value="說過大話掩飾" /> 講過大話／隱瞞重要事嚟「保護氣氛」</label>
+      <label><input type="checkbox" name="rf_jealous" value="控制型妒忌" /> 會查手機、限制伴侶見朋友</label>
+      <label><input type="checkbox" name="rf_bread" value="吊着不放" /> 吊住唔放／曖昧多過一個</label>
+      <label><input type="checkbox" name="rf_blame" value="永遠唔係我錯" /> 吵完永遠覺得唔關自己事</label>
+      <label><input type="checkbox" name="rf_money" value="錢唔清楚" /> 對錢／債務唔透明</label>
+      <label><input type="checkbox" name="rf_disrespect" value="公開不尊重" /> 會喺朋友面前踩／恥笑伴侶</label>
+      <label><input type="checkbox" name="rf_inconsistent" value="忽熱忽冷" /> 忽熱忽冷係常態</label>
+      <label><input type="checkbox" name="rf_none" value="以上皆無" /> <strong>以上皆無</strong>（敢剔先得）</label>
+    </div>
+    <div class="field" style="margin-top:0.85rem">
+      <label class="lbl" for="rf_other">其他你覺得自己有、想講清楚嘅紅旗</label>
+      <textarea id="rf_other" name="rf_other"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="dealbreaker">你嘅絕對不能接受／底線係咩？</label>
+      <textarea id="dealbreaker" name="dealbreaker"></textarea>
+    </div>
+  </section>
+
+  <!-- 6. 職責評分 1-10 -->
+  <section class="card" id="sec-duties">
+    <h2><span class="num">6</span> 職責評分（1–10）</h2>
+    <p class="hint">1 = 完全唔得；10 = 可以寫入履歷。請誠實自評。</p>
+    <div class="rating-grid">
+      <div class="rating-row">
+        <span>準時出現／守約</span>
+        <input type="number" name="duty_punctual" min="1" max="10" placeholder="1–10" />
+      </div>
+      <div class="rating-row">
+        <span>主動溝通同更新近況</span>
+        <input type="number" name="duty_comms" min="1" max="10" placeholder="1–10" />
+      </div>
+      <div class="rating-row">
+        <span>情緒支持（低潮時陪住）</span>
+        <input type="number" name="duty_support" min="1" max="10" placeholder="1–10" />
+      </div>
+      <div class="rating-row">
+        <span>記重要日子同細節</span>
+        <input type="number" name="duty_memory" min="1" max="10" placeholder="1–10" />
+      </div>
+      <div class="rating-row">
+        <span>幫襯家務／生活小事</span>
+        <input type="number" name="duty_chores" min="1" max="10" placeholder="1–10" />
+      </div>
+      <div class="rating-row">
+        <span>計劃約會／驚喜</span>
+        <input type="number" name="duty_dates" min="1" max="10" placeholder="1–10" />
+      </div>
+      <div class="rating-row">
+        <span>尊重界線同私人空間</span>
+        <input type="number" name="duty_boundaries" min="1" max="10" placeholder="1–10" />
+      </div>
+      <div class="rating-row">
+        <span>公開場合對伴侶有禮</span>
+        <input type="number" name="duty_respect" min="1" max="10" placeholder="1–10" />
+      </div>
+      <div class="rating-row">
+        <span>衝突後願意和好同改進</span>
+        <input type="number" name="duty_repair" min="1" max="10" placeholder="1–10" />
+      </div>
+      <div class="rating-row">
+        <span>整體「男朋友職能」</span>
+        <input type="number" name="duty_overall" min="1" max="10" placeholder="1–10" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 財務 -->
+  <section class="card" id="sec-finance">
+    <h2><span class="num">7</span> 財務態度</h2>
+    <div class="field">
+      <label class="lbl">約會誰付？</label>
+      <div class="inline-checks">
+        <label><input type="radio" name="who_pays" value="輪流／公平分" /> 輪流／公平分</label>
+        <label><input type="radio" name="who_pays" value="我請多啲" /> 我請多啲</label>
+        <label><input type="radio" name="who_pays" value="睇情況商量" /> 睇情況商量</label>
+        <label><input type="radio" name="who_pays" value="期望對方請" /> 期望對方請</label>
+      </div>
+    </div>
+    <div class="field">
+      <label class="lbl" for="money_talk">對「傾錢」舒服嗎？點樣傾最好？</label>
+      <textarea id="money_talk" name="money_talk"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="debt">有冇大額債務／財務壓力想提前講？</label>
+      <textarea id="debt" name="debt" placeholder="可以簡單講，誠實優先。"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="gift_style">送禮物／花錢表達愛嘅風格</label>
+      <input type="text" id="gift_style" name="gift_style" placeholder="例如：實際為主、驚喜為主、唔鍾意大花" />
+    </div>
+  </section>
+
+  <!-- 8. 愛與親密 -->
+  <section class="card" id="sec-affection">
+    <h2><span class="num">8</span> 愛與親密</h2>
+    <div class="field">
+      <label class="lbl" for="affection_show">你平時點表達關心同愛意？</label>
+      <textarea id="affection_show" name="affection_show"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="pda">公開場合親密（牽手、擁抱等）接受程度？</label>
+      <select id="pda" name="pda">
+        <option value="">— 請選擇 —</option>
+        <option>完全 OK</option>
+        <option>輕輕得</option>
+        <option>視場合</option>
+        <option>比較低調</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="lbl" for="quality_time">理想嘅二人時間係點？</label>
+      <textarea id="quality_time" name="quality_time" placeholder="宅喺屋企／出街食飯／行山／旅行……"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="need_space">你需要幾多「自己嘅時間」？</label>
+      <input type="text" id="need_space" name="need_space" />
+    </div>
+  </section>
+
+  <!-- 9. 妒忌與界線 -->
+  <section class="card" id="sec-jealousy">
+    <h2><span class="num">9</span> 妒忌與界線</h2>
+    <div class="field">
+      <label class="lbl" for="jealous_trigger">咩情況會令你妒忌？你會點處理？</label>
+      <textarea id="jealous_trigger" name="jealous_trigger"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="friends_opposite">同異性朋友／前同事聚會，你嘅底線係？</label>
+      <textarea id="friends_opposite" name="friends_opposite"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="social_media">社交媒體（追蹤、like、留言）有冇特別敏感？</label>
+      <textarea id="social_media" name="social_media"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="privacy">伴侶嘅隱私同你嘅隱私，你點睇？</label>
+      <textarea id="privacy" name="privacy"></textarea>
+    </div>
+  </section>
+
+  <!-- 10. 意向 -->
+  <section class="card" id="sec-intentions">
+    <h2><span class="num">10</span> 意向與目標</h2>
+    <div class="field">
+      <label class="lbl">你而家想搵嘅係？</label>
+      <div class="inline-checks">
+        <label><input type="radio" name="looking_for" value="認真交往" /> 認真交往</label>
+        <label><input type="radio" name="looking_for" value="先了解再決定" /> 先了解再決定</label>
+        <label><input type="radio" name="looking_for" value="輕鬆玩玩" /> 輕鬆玩玩</label>
+        <label><input type="radio" name="looking_for" value="結婚取向" /> 長遠／結婚取向</label>
+      </div>
+    </div>
+    <div class="field">
+      <label class="lbl" for="timeline">理想進度（例如幾耐見家長、定義關係）</label>
+      <textarea id="timeline" name="timeline"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="kids">對結婚／家庭／小朋友嘅想法（而家階段）</label>
+      <textarea id="kids" name="kids"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="why_me">點解想申請做「我男朋友」呢個位？</label>
+      <textarea id="why_me" name="why_me" placeholder="認真寫。呢題會睇。"></textarea>
+    </div>
+  </section>
+
+  <!-- 11. 最終面試題 -->
+  <section class="card" id="sec-interview">
+    <h2><span class="num">11</span> 最終面試題</h2>
+    <div class="field">
+      <label class="lbl" for="perfect_date">描述一個你心目中嘅完美約會</label>
+      <textarea id="perfect_date" name="perfect_date"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="bad_day">我心情差／生理期／加班到崩潰嗰日，你會點做？</label>
+      <textarea id="bad_day" name="bad_day"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="one_sentence">用一句說話說服我錄取你</label>
+      <textarea id="one_sentence" name="one_sentence" rows="3"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="special_skills">相關「特殊技能」<span class="sublbl">（煮飯、修嘢、搞笑、睇星、帶路……）</span></label>
+      <textarea id="special_skills" name="special_skills"></textarea>
+    </div>
+  </section>
+
+  <!-- 12. 問責 -->
+  <section class="card" id="sec-accountability">
+    <h2><span class="num">12</span> 問責</h2>
+    <div class="field">
+      <label class="lbl" for="mistake">做錯事之後，你通常第一步係咩？</label>
+      <textarea id="mistake" name="mistake" placeholder="辯解？消失？道歉？修好？"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="feedback">伴侶指出你問題時，你點反應？</label>
+      <textarea id="feedback" name="feedback"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="change_example">講一次你因為感情而真正改過自己嘅例子</label>
+      <textarea id="change_example" name="change_example"></textarea>
+    </div>
+  </section>
+
+  <!-- 13. 主動性 -->
+  <section class="card" id="sec-initiative">
+    <h2><span class="num">13</span> 主動性</h2>
+    <div class="field">
+      <label class="lbl" for="who_plans">約會通常邊個約、邊個計劃？</label>
+      <textarea id="who_plans" name="who_plans"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="check_in">忙嘅日子你會唔會主動報平安？</label>
+      <textarea id="check_in" name="check_in"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="effort">「努力」對你嚟講喺感情入面係咩意思？</label>
+      <textarea id="effort" name="effort"></textarea>
+    </div>
+  </section>
+
+  <!-- 14. 最後一題 -->
+  <section class="card" id="sec-finalq">
+    <h2><span class="num">14</span> 最後一題</h2>
+    <div class="field">
+      <label class="lbl" for="final_q">仲有咩我應該知道、但表格問唔到嘅？</label>
+      <textarea id="final_q" name="final_q" placeholder="秘密武器、奇怪習慣、對呢份工嘅額外承諾……隨你。"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl">
+        <input type="checkbox" name="honest_declare" value="我確認以上屬實" />
+        本人確認以上資料屬實；如有虛報，願意接受即時淘汰。
+      </label>
+    </div>
+  </section>
+
+  <!-- HR Only -->
+  <div class="hr-block" id="sec-hr" aria-disabled="true">
+    <div class="hr-stamp">⚠ 僅限人事部填寫 — 申請人請勿填寫</div>
+    <h2>人事專用欄（唯讀）</h2>
+    <p class="hint" style="margin-top:0">以下狀態由收表人勾選；申請人見到都唔好自己剔。</p>
+    <div class="status-grid">
+      <div class="status-chip approve">☐ 核准</div>
+      <div class="status-chip interview">☐ 候選面試</div>
+      <div class="status-chip review">☐ 審核中</div>
+      <div class="status-chip reject">☐ 拒絕</div>
+      <div class="status-chip instant">☐ 即刻拒絕—紅旗</div>
+    </div>
+    <div class="field" style="margin-top:0.85rem">
+      <label class="lbl">人事備註（唯讀示意）</label>
+      <textarea readonly placeholder="此欄由收表人填寫……" style="background:#eee;color:#888;"></textarea>
+    </div>
+  </div>
+
+  <!-- Important notice -->
+  <div class="notice" id="sec-notice">
+    <h2>重要聲明</h2>
+    <ul>
+      <li>呢份表係玩嘅，同時係真心篩選。填完唔代表有面談，更加唔等於錄取。</li>
+      <li>提交資料請自行衡量私隱；唔舒服嘅題可以寫「暫不回答」，但大面積空白＝自動落選。</li>
+      <li>呃人、吊人、腳踏多船：一經發現，職位永久取消，而且唔設上訴。</li>
+      <li>本「合約」無法律效力，但有感情效力。珍惜我時間嘅人，我會珍惜你。</li>
+    </ul>
+  </div>
+
+  <!-- Probation joke -->
+  <div class="probation" id="sec-probation">
+    <h2>試用期條款（認真嘅玩笑）</h2>
+    <p style="margin:0">
+      錄取後設 <strong>30 日試用期</strong>。試用期內若出現：長期已讀不回、無故放飛機、對朋友伴侶雙重標準、
+      或者「我以為我哋係玩玩」等行為，人事部有權即時解除合約，無需提前通知，亦無遣散費——
+      最多俾你一句：<em>多謝參與。</em>
+    </p>
+    <p style="margin:0.6rem 0 0">
+      試用期合格者，自動轉為<strong>長期合約</strong>，可無限續約，福利包括：陪伴、笑聲、同被選擇嘅安全感。
+    </p>
+  </div>
+
+  <div class="final-notice">提交唔等於錄取</div>
+
+  <!-- Signature -->
+  <footer class="sig" id="sec-sign">
+    <h2>簽署欄</h2>
+    <div class="row-2">
+      <div class="field">
+        <label class="lbl" for="sign_name">申請人簽名（全名）</label>
+        <input type="text" id="sign_name" name="sign_name" placeholder="手寫感：打你個名都得" />
+      </div>
+      <div class="field">
+        <label class="lbl" for="sign_date">日期</label>
+        <input type="date" id="sign_date" name="sign_date" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="lbl" for="sign_note">額外留言俾收表人</label>
+      <textarea id="sign_note" name="sign_note" rows="2" placeholder="可選"></textarea>
+    </div>
+  </footer>
+
+</form>
+
+<p class="footer-note">男朋友申請表 2026 · 一份用心嘅玩笑，亦係一道門檻 · 僅供私密分享</p>
+
+</div>
+
+<script>
+(function () {
+  const form = document.getElementById("bf-form");
+  const toast = document.getElementById("copy-toast");
+
+  function labelFor(el) {
+    if (!el) return "";
+    if (el.type === "checkbox" || el.type === "radio") {
+      const wrap = el.closest("label");
+      if (wrap) {
+        return wrap.textContent.replace(/\s+/g, " ").trim();
+      }
+    }
+    const id = el.id;
+    if (id) {
+      const lab = form.querySelector('label[for="' + id + '"]');
+      if (lab) return lab.textContent.replace(/\s+/g, " ").trim();
+    }
+    const prev = el.closest(".field");
+    if (prev) {
+      const lab = prev.querySelector("label.lbl");
+      if (lab) return lab.textContent.replace(/\s+/g, " ").trim();
+    }
+    return el.name || "";
+  }
+
+  function sectionTitle(el) {
+    const sec = el.closest("section.card, footer.sig");
+    if (!sec) return "";
+    const h = sec.querySelector("h2");
+    return h ? h.textContent.replace(/\s+/g, " ").trim() : "";
+  }
+
+  function collectAnswers() {
+    const lines = [];
+    lines.push("【男朋友申請表 — 2026】");
+    lines.push("職位：我男朋友｜部門：我嘅心同快樂");
+    lines.push("————————————");
+
+    let lastSec = "";
+    const handledRadio = new Set();
+    const handledCheckGroup = new Set();
+
+    const fields = form.querySelectorAll("input, textarea, select");
+    fields.forEach(function (el) {
+      if (el.closest(".hr-block")) return;
+      if (el.type === "checkbox" && el.name === "honest_declare") {
+        const sec = sectionTitle(el);
+        if (sec && sec !== lastSec) {
+          lines.push("");
+          lines.push("■ " + sec);
+          lastSec = sec;
+        }
+        lines.push((el.checked ? "☑ " : "☐ ") + labelFor(el));
+        return;
+      }
+
+      if (el.type === "radio") {
+        if (handledRadio.has(el.name)) return;
+        handledRadio.add(el.name);
+        const checked = form.querySelector('input[type="radio"][name="' + el.name + '"]:checked');
+        const sec = sectionTitle(el);
+        if (sec && sec !== lastSec) {
+          lines.push("");
+          lines.push("■ " + sec);
+          lastSec = sec;
+        }
+        const groupLabel = labelFor(el.closest(".field") ? el.closest(".field").querySelector('input[type="radio"]') : el);
+        // Use field label
+        const field = el.closest(".field");
+        let q = "";
+        if (field) {
+          const lab = field.querySelector("label.lbl");
+          q = lab ? lab.textContent.replace(/\s+/g, " ").trim() : el.name;
+        }
+        lines.push(q + "：" + (checked ? checked.value : "（未填）"));
+        return;
+      }
+
+      if (el.type === "checkbox") {
+        // Group checkboxes in same field
+        const field = el.closest(".field") || el.closest(".checks");
+        const groupKey = field ? (field.className + (field.querySelector("label.lbl") || {}).textContent) : el.name;
+        if (el.closest(".checks") && el.closest(".checks").querySelector("label.lbl") === null) {
+          // red flag list — collect once
+          if (handledCheckGroup.has("redflags")) return;
+          // We'll collect all at once when we hit first
+        }
+        if (el.closest("#sec-redflags .checks")) {
+          if (handledCheckGroup.has("rf")) return;
+          handledCheckGroup.add("rf");
+          const sec = sectionTitle(el);
+          if (sec && sec !== lastSec) {
+            lines.push("");
+            lines.push("■ " + sec);
+            lastSec = sec;
+          }
+          lines.push("紅旗自查：");
+          el.closest(".checks").querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
+            const t = cb.parentElement.textContent.replace(/\s+/g, " ").trim();
+            lines.push((cb.checked ? "  ☑ " : "  ☐ ") + t);
+          });
+          return;
+        }
+        if (el.closest(".inline-checks")) {
+          const fieldEl = el.closest(".field");
+          const key = fieldEl ? fieldEl.querySelector("label.lbl") && fieldEl.querySelector("label.lbl").textContent : el.name;
+          if (handledCheckGroup.has(key)) return;
+          handledCheckGroup.add(key);
+          const sec = sectionTitle(el);
+          if (sec && sec !== lastSec) {
+            lines.push("");
+            lines.push("■ " + sec);
+            lastSec = sec;
+          }
+          const q = fieldEl && fieldEl.querySelector("label.lbl")
+            ? fieldEl.querySelector("label.lbl").textContent.replace(/\s+/g, " ").trim()
+            : el.name;
+          const picked = [];
+          fieldEl.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
+            if (cb.checked) picked.push(cb.value || cb.parentElement.textContent.trim());
+          });
+          lines.push(q + "：" + (picked.length ? picked.join("、") : "（未填）"));
+          return;
+        }
+        return;
+      }
+
+      // text, number, date, textarea, select
+      if (el.readOnly) return;
+      const sec = sectionTitle(el);
+      if (sec && sec !== lastSec) {
+        lines.push("");
+        lines.push("■ " + sec);
+        lastSec = sec;
+      }
+      const q = labelFor(el);
+      let val = (el.value || "").trim();
+      if (!val) val = "（未填）";
+      lines.push(q + "：" + val);
+    });
+
+    lines.push("");
+    lines.push("————————————");
+    lines.push("※ 提交唔等於錄取");
+    return lines.join("\n");
+  }
+
+  document.getElementById("btn-copy").addEventListener("click", function () {
+    const text = collectAnswers();
+    function showOk() {
+      toast.style.display = "inline";
+      setTimeout(function () { toast.style.display = "none"; }, 2500);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(showOk).catch(function () {
+        fallbackCopy(text);
+        showOk();
+      });
+    } else {
+      fallbackCopy(text);
+      showOk();
+    }
+  });
+
+  function fallbackCopy(text) {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  document.getElementById("btn-print").addEventListener("click", function () {
+    window.print();
+  });
+
+  form.addEventListener("submit", function () {
+    var fa = document.getElementById("full_answers");
+    if (fa) fa.value = collectAnswers();
+    var st = document.getElementById("submit-toast");
+    if (st) st.style.display = "inline";
+  });
+
+  if (location.search.indexOf("submitted=1") !== -1) {
+    var note = document.createElement("div");
+    note.className = "intro";
+    note.style.background = "#e8fff0";
+    note.style.padding = "12px";
+    note.style.margin = "12px 0";
+    note.textContent = "申請已提交！收表人會喺電郵收到你嘅答案 ✦";
+    var wrap = document.querySelector(".page") || document.body;
+    wrap.insertBefore(note, wrap.firstChild);
+  }
+
+  // Default sign date to today
+  var d = document.getElementById("sign_date");
+  if (d && !d.value) {
+    var now = new Date();
+    var m = String(now.getMonth() + 1).padStart(2, "0");
+    var day = String(now.getDate()).padStart(2, "0");
+    d.value = now.getFullYear() + "-" + m + "-" + day;
+  }
+})();
+</script>
+</body>
+</html>
