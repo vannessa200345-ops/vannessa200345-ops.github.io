@@ -385,7 +385,7 @@
 </header>
 
 <div class="toolbar no-print">
-  <button type="submit" form="bf-form" class="action" id="btn-submit">提交申請表（電郵畀收表人）</button>
+  <button type="submit" form="bf-form" class="action" id="btn-submit">提交申請表</button>
   <button type="button" class="action secondary" id="btn-copy">複製全部答案</button>
   <button type="button" class="action secondary" id="btn-print">列印／存 PDF</button>
   <span id="copy-toast">已複製 ✦</span>
@@ -1067,7 +1067,7 @@
     note.style.background = "#e8fff0";
     note.style.padding = "12px";
     note.style.margin = "12px 0";
-    note.textContent = "申請已提交！收表人會喺電郵收到你嘅答案 ✦";
+    note.textContent = "申請已提交！多謝填寫 ✦";
     var wrap = document.querySelector(".page") || document.body;
     wrap.insertBefore(note, wrap.firstChild);
   }
