@@ -448,12 +448,18 @@
         <label><input type="radio" name="status" value="單身" /> 單身</label>
         <label><input type="radio" name="status" value="剛分手" /> 剛分手</label>
         <label><input type="radio" name="status" value="有曖昧" /> 有曖昧</label>
+        <label><input type="radio" name="status" value="離婚" /> 離婚</label>
+        <label><input type="radio" name="status" value="已婚" /> 已婚</label>
         <label><input type="radio" name="status" value="複雜" /> 複雜（請解釋）</label>
       </div>
     </div>
     <div class="field">
       <label class="lbl" for="status_note">如選「複雜」，請解釋</label>
       <textarea id="status_note" name="status_note" placeholder="講清楚，唔好曖昧……等等，呢度可以曖昧。"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl" for="kids_count">子女人數 <span class="sublbl">（有幾個仔女）</span></label>
+      <input type="number" id="kids_count" name="kids_count" min="0" max="99" placeholder="0＝冇" />
     </div>
     <div class="field">
       <label class="lbl" for="three_words">用三個詞形容自己</label>
